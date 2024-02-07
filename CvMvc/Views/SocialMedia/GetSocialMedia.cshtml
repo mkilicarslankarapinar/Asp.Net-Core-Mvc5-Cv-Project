@@ -1,0 +1,22 @@
+﻿@model CvMvc.Models.Entity.TblSocialMedia
+@{
+    ViewBag.Title = "GetSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Social Media Account Edit Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Social Media Name")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Link")
+    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    <br />
+    @Html.Label("Icon")
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Update</button>
+</form>
+

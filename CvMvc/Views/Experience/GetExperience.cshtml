@@ -1,0 +1,26 @@
+﻿@model CvMvc.Models.Entity.TblMyExperiences
+@{
+    ViewBag.Title = "GetExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>Experience Update Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Experience ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Header")
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+    <br />
+    @Html.Label("SubHeader")
+    @Html.TextBoxFor(x => x.SubHeader, new { @class = "form-control" })
+    <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("Explanation")
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+</form>

@@ -1,0 +1,29 @@
+﻿@model CvMvc.Models.Entity.TblMyEducations
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Add New Skill Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Header")
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Header, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Sub Header 1")
+    @Html.TextBoxFor(x => x.SubHeader1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sub Header 1")
+    @Html.TextBoxFor(x => x.SubHeader2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("Gpa")
+    @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GPA, "", new { @style = "color:blue" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>

@@ -1,0 +1,18 @@
+﻿@model CvMvc.Models.Entity.TblSkills
+@{
+    ViewBag.Title = "NewSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Add New Skill Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Skill")
+    @Html.TextBoxFor(x => x.Skills, new { @class = "form-control" })
+    <br />
+    @Html.Label("Percent")
+    @Html.TextBoxFor(x => x.Percentage, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>

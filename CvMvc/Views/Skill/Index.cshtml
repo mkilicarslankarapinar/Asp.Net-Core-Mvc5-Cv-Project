@@ -1,0 +1,86 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblSkills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{string color = ""; }
+@{string labelColor = ""; }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Skill List</h3>
+                            </div>
+                            <div class="card-body">
+                                <a href="/Skill/NewSkill/" class="btn btn-info">Add New Skill</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Skill</th>
+                                            <th>Progress</th>
+                                            <th style="width: 40px">Rating</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Percentage >= 0 && x.Percentage <= 50)
+                                            {
+                                                color = "progress-bar bg-danger";
+                                                labelColor = "badge bg-danger";
+                                            }
+                                            if (x.Percentage >= 51 && x.Percentage <= 70)
+                                            {
+                                                color = "progress-bar bg-warning";
+                                                labelColor = "badge bg-warning";
+                                            }
+                                            if (x.Percentage >= 71 && x.Percentage <= 84)
+                                            {
+                                                color = "progress-bar bg-primary";
+                                                labelColor = "badge bg-primary";
+                                            }
+                                            if (x.Percentage >= 85 && x.Percentage <= 100)
+                                            {
+                                                color = "progress-bar bg-success";
+                                                labelColor = "badge bg-success";
+                                            }
+                                            <tr>
+                                                <td>@x.ID</td>
+                                                <td>@x.Skills</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@color" style="width: @x.Percentage%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="@labelColor">@x.Percentage%</span></td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm" href="/Skill/EditSkill/@x.ID"><i class="fas fa-pencil-alt"></i>Edit</a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="/Skill/DeleteSkill/@x.ID"><i class="fas  fa-trash"></i>Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

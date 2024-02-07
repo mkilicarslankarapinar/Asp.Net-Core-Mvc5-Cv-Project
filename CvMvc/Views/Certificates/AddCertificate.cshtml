@@ -1,0 +1,22 @@
+﻿@model CvMvc.Models.Entity.TblMyCertificates
+@{
+    ViewBag.Title = "AddCertificate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>Add Certificate Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Certificate Explanation")
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Save</button>
+</form>
+
+
+
+
+

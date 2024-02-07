@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="30" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="About" Type="nvarchar(max)" />
+          <Property Name="Image" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TblCommunication">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameSurname" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" MaxLength="100" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="TblMyCertificates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Explanation" Type="varchar" MaxLength="350" />
+          <Property Name="Date" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TblMyEducations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="varchar" MaxLength="100" />
+          <Property Name="SubHeader1" Type="varchar" MaxLength="100" />
+          <Property Name="SubHeader2" Type="varchar" MaxLength="100" />
+          <Property Name="GPA" Type="varchar" MaxLength="10" />
+          <Property Name="Date" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblMyExperiences">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="varchar" MaxLength="100" />
+          <Property Name="SubHeader" Type="varchar" MaxLength="100" />
+          <Property Name="Explanation" Type="varchar(max)" />
+          <Property Name="Date" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblMyHobbies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Explanation1" Type="varchar" MaxLength="500" />
+          <Property Name="Explanation2" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblSkills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Skills" Type="varchar" MaxLength="100" />
+          <Property Name="Percentage" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" />
+          <Property Name="Link" Type="varchar" MaxLength="100" />
+          <Property Name="Icon" Type="varchar" MaxLength="30" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="DbCvModelStoreContainer">
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCommunication" EntityType="Self.TblCommunication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMyCertificates" EntityType="Self.TblMyCertificates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMyEducations" EntityType="Self.TblMyEducations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMyExperiences" EntityType="Self.TblMyExperiences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMyHobbies" EntityType="Self.TblMyHobbies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSkills" EntityType="Self.TblSkills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="About" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblCommunication">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TblMyCertificates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Explanation" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblMyEducations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubHeader1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubHeader2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GPA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblMyExperiences">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubHeader" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblMyHobbies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Explanation1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Explanation2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblSkills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Percentage" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="DbCvEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" />
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
+          <EntitySet Name="TblCommunication" EntityType="Self.TblCommunication" />
+          <EntitySet Name="TblMyCertificates" EntityType="Self.TblMyCertificates" />
+          <EntitySet Name="TblMyEducations" EntityType="Self.TblMyEducations" />
+          <EntitySet Name="TblMyExperiences" EntityType="Self.TblMyExperiences" />
+          <EntitySet Name="TblMyHobbies" EntityType="Self.TblMyHobbies" />
+          <EntitySet Name="TblSkills" EntityType="Self.TblSkills" />
+          <EntitySet Name="TblSocialMedia" EntityType="DbCvModel.TblSocialMedia" />
+        </EntityContainer>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities2">
+          <EntitySetMapping Name="TblAbout">
+            <EntityTypeMapping TypeName="DbCvModel.TblAbout">
+              <MappingFragment StoreEntitySet="TblAbout">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="About" ColumnName="About" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="DbCvModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCommunication">
+            <EntityTypeMapping TypeName="DbCvModel.TblCommunication">
+              <MappingFragment StoreEntitySet="TblCommunication">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMyCertificates">
+            <EntityTypeMapping TypeName="DbCvModel.TblMyCertificates">
+              <MappingFragment StoreEntitySet="TblMyCertificates">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMyEducations">
+            <EntityTypeMapping TypeName="DbCvModel.TblMyEducations">
+              <MappingFragment StoreEntitySet="TblMyEducations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="SubHeader1" ColumnName="SubHeader1" />
+                <ScalarProperty Name="SubHeader2" ColumnName="SubHeader2" />
+                <ScalarProperty Name="GPA" ColumnName="GPA" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMyExperiences">
+            <EntityTypeMapping TypeName="DbCvModel.TblMyExperiences">
+              <MappingFragment StoreEntitySet="TblMyExperiences">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="SubHeader" ColumnName="SubHeader" />
+                <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMyHobbies">
+            <EntityTypeMapping TypeName="DbCvModel.TblMyHobbies">
+              <MappingFragment StoreEntitySet="TblMyHobbies">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Explanation1" ColumnName="Explanation1" />
+                <ScalarProperty Name="Explanation2" ColumnName="Explanation2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSkills">
+            <EntityTypeMapping TypeName="DbCvModel.TblSkills">
+              <MappingFragment StoreEntitySet="TblSkills">
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSocialMedia">
+            <EntityTypeMapping TypeName="DbCvModel.TblSocialMedia">
+              <MappingFragment StoreEntitySet="TblSocialMedia">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

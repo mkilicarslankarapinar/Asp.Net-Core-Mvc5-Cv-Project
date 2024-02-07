@@ -1,0 +1,22 @@
+﻿@model CvMvc.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "GetAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>User Update Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Admin ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("User Name")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+</form>
+
+

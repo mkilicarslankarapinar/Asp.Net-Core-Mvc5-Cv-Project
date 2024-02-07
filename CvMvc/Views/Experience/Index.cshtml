@@ -1,0 +1,31 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblMyExperiences>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Experience List</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Header</th>
+        <th>Sub Header</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.Header</td>
+                <td>@x.SubHeader</td>
+                <td>@x.Date</td>
+                <td><a href="/Experience/DeleteExperience/@x.ID" class="btn btn-danger">Delete</a></td>
+                <td><a href="/Experience/GetExperience/@x.ID" class="btn btn-warning">Edit</a></td>
+            </tr>
+        }
+</table>
+<a href="/Experience/AddExperience" class="btn btn-primary">Add New Experience</a>
